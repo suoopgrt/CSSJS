@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script src="js/script.js"></script>
+	<script src="js/script1.js"></script>
+	<script src="js/script2.js"></script>
+	<script src="js/app.js"></script>
+	<title>JS</title>
+</head>
+<body>
+	<h1>testing...</h1>
+	<h2>hey</h2>
+	<div class="container">
+	<div>
+		Java script engine is single threaded and sequenatial.	
+	</div>
+	
+	<div>
+		<h3>Dollar sign</h3>
+		Dollar sign is something JavaScript variables, identifiers and function names are allowed to start with. 
+	</div>
+	<div>
+		<h3>Object Literal</h3>
+		Object literal can be a better way 
+	</div>
+	<div>
+		<h3>Functions</h3>
+	Functions in JavaScript are what's called, first class data types.<br> which means that whatever you could do with the variable, whatever you could do with an object you could also do with the function.<br> Functions in JavaScript are objects.</div>
+	</div>
+	<div>
+		<h3>Method in Object</h3>
+	What would be an object without some methods? And methods in JavaScript are just functions that are set on properties of objects. Use prototype instead of creating functions in every object. 
+	</div>
+	<div>
+		<h3>Object Literal and this</h3>
+	When you have an inner function within another function, this keyword starts pointing to the global object. 
+	</div>
+	<div>
+		<h3>For loop for array</h3>
+	There is a special for loop that you could use to traverse the properties of an object 
+	</div>
+	<div>
+		<h3>Closure</h3>
+	Without the concept of Closure, something like Ajax wouldn't really even be possilbe <br>
+	function A(ar1){ return (function(){ return ar1;}))};<br>
+	var v = A(2);<br>
+	console.log(v); <br>
+	When we call v, it will go ahead and execute the function. It will create its own execution environment. It will go ahead and look for the ar1 variable in its own execution environment. It will not find it and it will then try to look for ar1 variable in its out lexical environment, and the outer lexical environment memory space will still remain even though the A function no longer exists. That's how we basically are able to trap or to close in whatever variables and whatever memory space is sitting outside of the lexical environment of this return function. That's how Closure work.
+	</div>
+	<div>
+		<h3>Fake Namespace and IIFE</h3>
+	A namespce is just a container for some functionality and for some declarations. JavaScript doesn't really have name spaces that other language have. However, in JavaScript we could fake name spaces.<br>
+	var jamesNamespace = {};<br>
+	jamesNamespce.sName = "John";<br>
+	Faking namespace using JavaScript objects such that certain variables and functions can coexist in the global scope. <br>
+	You can also use Immediately Invoked Function Expression (IIFE)<br>
+	(function(name){console.log("d Sample :"+name);})("John");<br>
+	The above line produces a value, which is a function object and then we're taking that function object and we're just putting parentheses right behind it. And that invokes that function object. 
+
+(function(wee) {
+	var jamesGreeter = {};
+	jamesGreeter.name = "James";
+	jamesGreeter.sayHello = function () {
+	console.log("Hello "+jamesGreeter.name);
+	}
+	wee.jamesGreeter = jamesGreeter;
+})(window);
+	</div>
+</body>
+</html>

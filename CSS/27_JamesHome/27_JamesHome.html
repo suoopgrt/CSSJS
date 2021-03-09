@@ -7,29 +7,73 @@
     <title>Hours of James</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
 <body>
   <header>
-    <nav id="header-nav" class="navbar navbar-default">
+    <nav class="header-nav navbar-default">
       <div class="container">
         <div class="navbar-header">
-          <a href="index.html" class="pull-left">
+        <div class="navbar navbar-expand-sm navbar-light">
+          <a href="index.html" class="pull-left d-none d-lg-block">
             <div id="logo-img"  alt="Logo image"></div>
           </a>
           <div class="navbar-brand">
             <a href="index.html"><h1>Hours of James Jinsu Im</h1></a>
             <p>
-              <img src="images/james1.png" alt="Kosher certification" class="fillwidth">
+              <img src="images/jlol.png" alt="James">
               <span class="navbar-spancolor">James Jinsu Im</span>
             </p>
-            
           </div>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav navbar-list">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="bi bi-puzzle-fill"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="bi bi-question-circle"></i></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="bi bi-server"></i></a>
+                </li>    
+            </ul>
+        </div>          
         </div>
       </div>
+    </nav>
   </header>
 
+  <div id="main-content" class="container main-pic">
+    <div class="jumbotron">
+      <img src="images/krabi.png" alt="Picture of restaurant" class="img-fluid d-sm-block d-md-none">
+    </div>
+        <div id="home-tiles" class="row main-pic-2">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="menu-categories.html"><div id="menu-tile"><span>menu</span></div></a>
+      </div>
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <a href="../../jamesjs/40_js.html"><div id="specials-tile"><span>JS</span></div></a>
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <a href="https://www.google.com/maps/place/David+Chu's+China+Bistro/@39.3635874,-76.7138622,17z/data=!4m6!1m3!3m2!1s0x89c81a14e7817803:0xab20a0e99daa17ea!2sDavid+Chu's+China+Bistro!3m1!1s0x89c81a14e7817803:0xab20a0e99daa17ea" target="_blank">
+          <div id="map-tile">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21180.627873892554!2d-123.376775!3d48.4262362!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548f738bddb06171%3A0x38e8f3741ebb48ed!2sVictoria%2C%20BC!5e0!3m2!1sen!2sca!4v1615188280599!5m2!1sen!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <span>map</span>
+          </div>
 
+        </a>
+      </div>
+    </div>
+  </div>
   <!-- jQuery (Bootstrap JS plugins depend on it) -->
   <script src="js/jquery-2.1.4.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
