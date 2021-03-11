@@ -1,6 +1,5 @@
 (function(mywin){
 	var ajaxUtils = {};
-	// Makes an Ajax Get request to 'reqeustUrl'
 	ajaxUtils.sendGetRequest = function(requestUrl, responseHandler, isJsonResponse){
 		var request = getRequestObject();
 		console.log(request);

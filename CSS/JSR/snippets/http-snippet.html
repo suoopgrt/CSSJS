@@ -1,0 +1,28 @@
+	<h3>HTTP</h3>
+	ajaxload.infor <br>
+	HyperText Transfer Protocol based on request/response stateless protocol.<br>
+	statless means that when the server responds to a request from a browser, that response does not depend on any previous requests that the browser made. In fact, as far as the actual language in which the client, the browser and the server communicate, the server has no idea whether or not the client or the browser has requested anything from it before. <br>
+	The client, the browser usually opens the connection to the server. Then the client sends an HTTP request for a particular resource. And then the server responds with an HTTP response to the client, usually with a resource that the client requested, but sometime the resource is not found or some other error occures. And then the clien (browser usually) closes the connection to the server. Now before we speak about the actual communication language, the HTTP protocol , for a little bit, let's talk about how to identify a resource on the web. And the way we talk about it, we have three terms that we need to understand that are kind of thrown around. <br>
+	1. URN : Uniform Resource Name <br>
+	URN is a way to uniquely identify a resource or a name of resource. The thing though about URNs is they do not tell us how to get that resource. And URNs are very commonly used by organizations and institutions who want to standardize to maintain some uniqueness of particular resource within that organization. <br>
+	ex: "HTML/CSS/Javascript/Web Developers/Yaakov/Chaikin"<br>
+	2. URI : Unifrom Resource Identifier<br>
+	URI uniquely identifyes a resource or a location of a resource. Even though it identifies uniquely the location of resource, it still does not necessarily tell us how to get to that resource. The reason is within a URI, the context is usually missing. It's very simmlar to URN except the URI is much more directory type of structure looking thing. <br> I am not able to get that resource because I won't know where to go to get it. Once you take me to where to get it, If you take me to coursera.org and I start from the root of coursera.org and I could start searching /official_web_site/index.html, then I'am able to get it. But URI by itself doesn't necessarily tell us how to get that resource.<br>
+	ex: /official_web_site/index.html<br>
+	3. URL : Uniform Resource Locator<br>
+	URL is a form of URL that provides the information on how to get that resource. <br>
+	<br>
+	HTTP Request structure <br>
+	GET / index.html?firstName=Yaakov HTTP/1.1<br>
+	This is an HTTP request structure, in another word the actual language that the browser comunicates with the server. <br>
+	GET : <br>
+	- Retrieves the resource <br>
+	- Data is passed to server as part of the URI <br>
+	POST : <br>
+	- Sends data to server in order to be processed <br>
+	- Data is sent in the message body<br><br>
+	HTTP Response structure <br>
+	HTTP/1.1 200 OK <br>
+	404 Not Found <br>
+	403 Forbidden <br>
+	500 Internal Server Error <br>
