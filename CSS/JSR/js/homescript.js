@@ -65,6 +65,8 @@
 			finalHtml += html;
 		}
 		console.log("final html : "+finalHtml);
+		finalHtml += "</section>";
+  		return finalHtml;
 
 	}
 
