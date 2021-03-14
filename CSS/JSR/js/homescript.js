@@ -24,7 +24,7 @@
 		return string;
 	}
 	document.addEventListener("DOMContentLoaded",function(event){
-		showLoading("#HTTPDes");
+		// showLoading("#HTTPDes");
 		$ajaxUtils.sendGetRequest(
 			httpHtml, function(responseText){
 				console.log("10 : "+responseText);
