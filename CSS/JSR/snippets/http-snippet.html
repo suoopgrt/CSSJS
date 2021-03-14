@@ -26,3 +26,15 @@
 	404 Not Found <br>
 	403 Forbidden <br>
 	500 Internal Server Error <br>
+	You can make an icon on ajaxload.info <br>
+	To check the request choose network on Chrome develper tool, leave it at XHR which stands for XML HTTP request, it is AJAX request. <br>
+	This is the rest API that provides us JSON data that we need. <br>
+	http://davids-restaurant.herokuapp.com/categories.json <br>
+	A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.<br>
+	Even though the actual website is going to be hosted on GitHub pages, The data is actually going to sit as this app, as this restaurant. This app is actually a Ruby on Rails app. <br>
+	The fact that this data is hosted on herokuapp.com and our application is hostd, well locally right now for developing purposes. It's being hosted on our borwser sync so it's kind of a local host, or eventually we'll get hosted on GitHub. The fact that they're hosted on two different domain names is actually a problem. The reason is because every browser comes with this security mechanism that's called same-source or same origin rule. It means that if you load javascript that tries to reach out through Ajax to any other domain name other than the one that this particular HTML page was served from, the browser will stop that activity and will not allow it. The reason is like followings: <br>
+	- The browser and the JavaScripter runs in it runs as you has the same provileges on your computer as you do. And in some remote script was allowed to reach out to other domain names other than the one you actually want to. What it could do, since your're operating behind a firewall, and the JavaScript that's executing in the page is also executing behind a firewall because it is your computer after all. If the Java script was allowed to reach out to other domain names other than the one it was served from on the HTML page that you want it to served from, it could potentially reach out to internal websites and internal computers that it really shouldn't be able to even see. Therefore what the browsers do is they enforce the same origin and source rule. <br>
+	So we use CORS ( Cross Origin Resource Sharing ) <br>
+	Basically the idea of CORS is there's going to be some HDP headers that the browser will know about and will tell the browser that it is actually save to reach out to this particular domain name.
+	- Point number two is this is kind of hard to read what exactly this JSON is,  So one quick trick you can do is that you could open the Chrome developer tools and if you go to network tab, you can even click all. 
+	
