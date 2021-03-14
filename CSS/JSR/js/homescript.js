@@ -64,6 +64,8 @@
 			html = insertProperty(html, "short_name",  short_name);
 			finalHtml += html;
 		}
+		console.log("final html : "+finalHtml);
+
 	}
 
 	global.$dc = dc;
