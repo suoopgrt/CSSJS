@@ -42,9 +42,11 @@
 	};
 
 	function buildAndShowCategoriesHTML(categories){
+		console.log("buildAndShowCategoriesHTML: "+categories);
 		$ajaxUtils.sendGetRequest(
 			categoriesTitleHtml, function(categoriesTitleHtml){
 				$ajaxUtils.sendGetRequest( categoryHtml, function(categoryHtml){
+					console.log("2 buildAndShowCategoriesHTML: "+categories);
 					var categoriesViewHtml = buildCategoriesViewHtml(categories, categoriesTitleHtml, categoryHtml);
 	 	 			insertHtml("#HTTPDes", categoriesViewHtml);
 				}, false);
