@@ -1,7 +1,10 @@
 (function(global){
 	var dc = {};
 	var httpHtml = "snippets/http-snippet.html";
-	var allCategoriesUrl = "http://davids-restaurant.herokuapp.com/categories.json";
+	// var allCategoriesUrl = "http://davids-restaurant.herokuapp.com/categories.json";
+	var allCategoriesUrl = "data/categories.json"
+
+
 	var categoriesTitleHtml = "snippets/categories-title-snippet.html";
 	var categoryHtml = "snippets/category-snippet.html";
 
