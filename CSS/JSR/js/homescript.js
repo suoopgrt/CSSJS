@@ -9,14 +9,12 @@
 	var categoryHtml = "snippets/category-snippet.html";
 
 	var insertHtml = function(selector, html){
-		console.log("insrtHTML "+selector + html);
 		var targetElem = document.querySelector(selector);
 		targetElem.innerHTML = html;
 	};
 
 	var showLoading = function(selector){
 		console.log("showLoading "+selector);
-		console.log("addd");
 		var html = "<div class = 'text-left'>";
 		html += "<img src = 'images/ajax-loader.gif'></div>";
 		insertHtml(selector,html);
