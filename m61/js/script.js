@@ -78,17 +78,14 @@ dc.loadMenuCategories = function () {
 // Builds HTML for the categories page based on the data
 // from the server
 function buildAndShowCategoriesHTML (categories) {
-  console.log("buildAndShowCategoriesHTML: "+categories);
   // Load title snippet of categories page
   $ajaxUtils.sendGetRequest(
     categoriesTitleHtml,
     function (categoriesTitleHtml) {
-      console.log("3 buildAndshowCategoriesHTML");
       // Retrieve single category snippet
       $ajaxUtils.sendGetRequest(
         categoryHtml,
-        function (categoryHtml) {
-          console.log("4 buildAndShowCategoriesHTML : ");
+        function (categoryHtml) {          
           var categoriesViewHtml =
             buildCategoriesViewHtml(categories,
                                     categoriesTitleHtml,
