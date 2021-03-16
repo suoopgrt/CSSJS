@@ -1,6 +1,7 @@
 (function(global){
 	var dc = {};
 	var httpHtml = "snippets/http-snippet.html";
+	var mainHtml = "snippets/main.html";
 //  var allCategoriesUrl = "http://davids-restaurant.herokuapp.com/categories.json";
 	var allCategoriesUrl = "data/categories.json"
 //	var menuItemsUrl ="https://davids-restaurant.herokuapp.com/menu_items.json?category=";
@@ -33,8 +34,7 @@
 	document.addEventListener("DOMContentLoaded",function(event){
 	 	showLoading("#HTTPDes");
 		$ajaxUtils.sendGetRequest(
-			httpHtml, function(responseText){
-				console.log("10 : "+responseText);
+			mainHtml, function(responseText){
 				document.querySelector("#HTTPDes").innerHTML = responseText;
 			}, false);
 	
