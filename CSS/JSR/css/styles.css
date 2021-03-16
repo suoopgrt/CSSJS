@@ -42,6 +42,49 @@
   padding: 0px 10px;
 }
 
+#js, #ajax, #json {
+  height: 250px;
+  width: 100%;
+  margin-bottom: 15px;
+  position: relative;
+  border: 2px solid #3F0C1F;
+  overflow: hidden;  
+}
+
+#js:hover, #ajax:hover, #json:hover {
+  box-shadow: 0 1px 5px 1px #cccccc;
+}
+
+#js span, #ajax span, #json span {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .8;
+}
+
+#js {
+  background: url('../images/table/A/A.png') no-repeat;
+  background-position: center;
+}
+
+#ajax {
+  background: url('../images/table/J/J.png') no-repeat;
+  background-position: center;
+}
+
+#json {
+  background: url('../images/table/C/C.png') no-repeat;
+  background-position: center;
+}
+
+
+
 
 
 .category-tile { 
@@ -74,17 +117,3 @@
   .sidenav a {font-size: 18px;}
 }
 
-#js {
-  background: url('../images/table/A/A.png') no-repeat;
-  background-position: center;
-}
-
-#ajax {
-  background: url('../images/table/J/J.png') no-repeat;
-  background-position: center;
-}
-
-#json {
-  background: url('../images/table/C/C.png') no-repeat;
-  background-position: center;
-}
