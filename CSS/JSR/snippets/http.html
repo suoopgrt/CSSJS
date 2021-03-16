@@ -1,0 +1,40 @@
+<div>
+HyperText Transfer Protocol based on request/response stateless protocol.
+statless means that when the server responds to a request from a browser, that response does not depend on any previous requests that the browser made. In fact, as far as the actual language in which the client, the browser and the server communicate, the server has no idea whether or not the client or the browser has requested anything from it before.
+The client, the browser usually opens the connection to the server. Then the client sends an HTTP request for a particular resource. And then the server responds with an HTTP response to the client, usually with a resource that the client requested, but sometime the resource is not found or some other error occures. And then the clien (browser usually) closes the connection to the server. Now before we speak about the actual communication language, the HTTP protocol , for a little bit, let's talk about how to identify a resource on the web. And the way we talk about it, we have three terms that we need to understand that are kind of thrown around.
+1. URN : Uniform Resource Name
+URN is a way to uniquely identify a resource or a name of resource. The thing though about URNs is they do not tell us how to get that resource. And URNs are very commonly used by organizations and institutions who want to standardize to maintain some uniqueness of particular resource within that organization.
+ex: "HTML/CSS/Javascript/Web Developers/Yaakov/Chaikin"
+2. URI : Unifrom Resource Identifier
+URI uniquely identifyes a resource or a location of a resource. Even though it identifies uniquely the location of resource, it still does not necessarily tell us how to get to that resource. The reason is within a URI, the context is usually missing. It's very simmlar to URN except the URI is much more directory type of structure looking thing.
+I am not able to get that resource because I won't know where to go to get it. Once you take me to where to get it, If you take me to coursera.org and I start from the root of coursera.org and I could start searching /official_web_site/index.html, then I'am able to get it. But URI by itself doesn't necessarily tell us how to get that resource.
+ex: /official_web_site/index.html
+3. URL : Uniform Resource Locator
+URL is a form of URL that provides the information on how to get that resource.
+
+HTTP Request structure
+GET / index.html?firstName=Yaakov HTTP/1.1
+This is an HTTP request structure, in another word the actual language that the browser comunicates with the server.
+GET :
+- Retrieves the resource
+- Data is passed to server as part of the URI
+POST :
+- Sends data to server in order to be processed
+- Data is sent in the message body
+
+HTTP Response structure
+HTTP/1.1 200 OK
+404 Not Found
+403 Forbidden
+500 Internal Server Error
+You can make an icon on ajaxload.info
+To check the request choose network on Chrome develper tool, leave it at XHR which stands for XML HTTP request, it is AJAX request.
+This is the rest API that provides us JSON data that we need.
+http://davids-restaurant.herokuapp.com/categories.json
+A RESTful API is an architectural style for an application program interface (API) that uses HTTP requests to access and use data. That data can be used to GET, PUT, POST and DELETE data types, which refers to the reading, updating, creating and deleting of operations concerning resources.
+Even though the actual website is going to be hosted on GitHub pages, The data is actually going to sit as this app, as this restaurant. This app is actually a Ruby on Rails app.
+The fact that this data is hosted on herokuapp.com and our application is hostd, well locally right now for developing purposes. It's being hosted on our borwser sync so it's kind of a local host, or eventually we'll get hosted on GitHub. The fact that they're hosted on two different domain names is actually a problem. The reason is because every browser comes with this security mechanism that's called same-source or same origin rule. It means that if you load javascript that tries to reach out through Ajax to any other domain name other than the one that this particular HTML page was served from, the browser will stop that activity and will not allow it. The reason is like followings:
+- The browser and the JavaScripter runs in it runs as you has the same provileges on your computer as you do. And in some remote script was allowed to reach out to other domain names other than the one you actually want to. What it could do, since your're operating behind a firewall, and the JavaScript that's executing in the page is also executing behind a firewall because it is your computer after all. If the Java script was allowed to reach out to other domain names other than the one it was served from on the HTML page that you want it to served from, it could potentially reach out to internal websites and internal computers that it really shouldn't be able to even see. Therefore what the browsers do is they enforce the same origin and source rule.
+So we use CORS ( Cross Origin Resource Sharing )
+Basically the idea of CORS is there's going to be some HDP headers that the browser will know about and will tell the browser that it is actually save to reach out to this particular domain name. - Point number two is this is kind of hard to read what exactly this JSON is, So one quick trick you can do is that you could open the Chrome developer tools and if you go to network tab, you can even click all.
+</div>
