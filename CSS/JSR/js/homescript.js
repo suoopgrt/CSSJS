@@ -89,7 +89,7 @@
 	  finalHtml += "</section>";
 	  return finalHtml;
 	}
-	
+
 	function buildAndShowCategoriesHTML(categories){
 		console.log("buildAndShowCategoriesHTML: "+categories);
 		$ajaxUtils.sendGetRequest(
@@ -121,15 +121,15 @@
 		finalHtml += "<section class='row'>";
 		console.log("category length : "+categories.length);
 
-//		for(var i =0; i<categories.length; i++){
-		var i=0;
+		for(var i =0; i<3; i++){
+	
 			var html = categoryHtml;
 			var name = ""+categories[i].name;
 			var short_name = categories[i].short_name;
 			html = insertProperty(html, "name", name);
 			html = insertProperty(html, "short_name",  short_name);
 			finalHtml += html;
-//		}
+		}
 		console.log("final html : "+finalHtml);
 		finalHtml += "</section>";
   		return finalHtml;
