@@ -22,75 +22,31 @@
 	  		<ul class="navbar-nav">
 	  			<p><a href="27_JamesHome.html"><img src="images/jlol.png" alt="James"></a></p>
 	    		<li class="nav-item active">
-	      			<a class="nav-link" href="#">Adctive</a>
+	      			<a class="nav-link" href="#">AJAX</a>
 	    		</li>
 	    		<li class="nav-item">
-	      			<a class="nav-link" href="#">Link</a>
+	      			<a class="nav-link" href="#">JSON</a>
 	    		</li>
 	    		<li class="nav-item">
-	      			<a class="nav-link" href="#">Link</a>
+	      			<a class="nav-link" href="#">SPA</a>
 	    		</li>
 	    		<li class="nav-item">
-	      			<a class="nav-link disabled" href="#">Disabled</a>
+	      			<a class="nav-link disabled" href="#">NotYet</a>
 	    		</li>
 	  		</ul>
 		</nav>
-	</div>
+	</div>	
 	<div class="sidenav">
-  	<a href="#HTTPDes">HTTP</a>
-  	<a href="#AJAX">AJAX</a>
-  	<a href="#JSON">JSON</a>
-  	<a href="#SPA">SPA</a>
+  		<a href="#HTTPDes">HTTP</a>
+  		<a href="#AJAX">AJAX</a>
+  		<a href="#JSON">JSON</a>
+  		<a href="#SPA">SPA</a>
 	</div>
 
 	<div class="main">
-	<h1>testing...</h1>
-	<h2>hey</h2>
-	<div class="container">
-	<div>
-		Java script engine is single threaded and sequenatial.	
+		<div class="container">
+			<div id="HTTPDes" class="container"></div>
+		</div>
 	</div>
-	<div>
-		<button id="myButton" onclick="$dc.loadMenuCategories();">dc</button>
-	</div>
-	
-	<div>
-	<div id="HTTPDes" class="container"></div>
-	<hr>
-	</div>
-	<div id="AJAX">
-	<h3>Ajax</h3>
-	Asynchronous Javascript And XML <br>
-	It's asynchronous which means execution of more than one instruction at a time. Asynchronous instruction returns right away. The actual execution is done in a separate thread or process <br>
-	</div>
-	<hr>
-	<div id="JSON">
-	<h3>JSON</h3>
-	 JavaScript Object Notation<br>
-	 JSON is a format that is used pretty widely, especially when we speak about passing data between the server and the client. <br>
-	 It is a lightweight data interchange format. It is simple textual representation of data. <br>
-	 1. Easy for humans to read and write <br>
-	 2. Easy for machines to parse and generate <br>
-	 Subset of Javascript object literal syntax ... but <br>
-	 (1) Property names must be in double quotes <br>
-	 (2) String values must be in double quotes <br>
-	 Syntax for everything else is exactly like for object literal<br>
-	 - JSON is Not a Javascript Object Literal <br>
-	 - JSON is just a string <br>
-	 - The Syntax of JSON is based on objet literal though <br>
-	 - Need to convert JSON into a JS object <br>
-	 convert from json string to object 
-	 var obj = JSON.parse(jsonString);<br>
-	 convert from object to json string 
-	 var str = JSON.stringify(obj);
-	</div>	
-	<div id="SPA">
-		<h3>SPA</h3>
-	Single Page Application <br>
-	SPAs heavily rely on Ajax. We are going to update the least amount of the page possible. 
-	</div>
-	</div>
-</div>
-
 </body>
 </html>
