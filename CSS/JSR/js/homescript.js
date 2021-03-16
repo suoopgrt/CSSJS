@@ -8,8 +8,12 @@
 	var canvasUrl = "data/canvas-items.json";
 
 
+
 	var categoriesTitleHtml = "snippets/categories-title-snippet.html";
 	var categoryHtml = "snippets/category-snippet.html";
+
+	var jsTitleHtml = "snippets/JS-title.html";
+	var jsHtml = "snippets/JS-main.html";
 
 	var canvastitlehtml = "snippets/canvas-title.html";
 	var canvasitemHtml = "snippets/canvas-item.html";
@@ -39,9 +43,9 @@
 			}, false);
 	
 	});
-	dc.loadMenuCategories = function () {
+	dc.loadJS = function () {
 		showLoading("#HTTPDes");
-		$ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowCategoriesHTML);
+		$ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowJSHTML);
 	};
 
 	dc.loadCanvasItems = function(categoryShort){
@@ -64,43 +68,37 @@
 	}
 	// Using categories data and snippets html
 	// build categories view HTML to be inserted into page
-	function buildCategoriesViewHtml(categories,
-	                                 categoriesTitleHtml,
-	                                 categoryHtml) {
 
-	  var finalHtml = categoriesTitleHtml;
-	  finalHtml += "<section class='row'>";
-
-	  // Loop over categories
-	  for (var i = 0; i < categories.length; i++) {
-	    // Insert category values
-	    var html = categoryHtml;
-	    var name = "" + categories[i].name;
-	    var short_name = categories[i].short_name;
-	    html =
-	      insertProperty(html, "name", name);
-	    html =
-	      insertProperty(html,
-	                     "short_name",
-	                     short_name);
-	    finalHtml += html;
-	  }
-
-	  finalHtml += "</section>";
-	  return finalHtml;
-	}
-
-	function buildAndShowCategoriesHTML(categories){
-		console.log("buildAndShowCategoriesHTML: "+categories);
+	function buildAndShowJSHTML(categories){
 		$ajaxUtils.sendGetRequest(
-			categoriesTitleHtml, function(categoriesTitleHtml){
-				$ajaxUtils.sendGetRequest( categoryHtml, function(categoryHtml){
-					console.log("2 buildAndShowCategoriesHTML: "+categories);
-					var categoriesViewHtml = buildCategoriesViewHtml(categories, categoriesTitleHtml, categoryHtml);
-	 	 			insertHtml("#HTTPDes", categoriesViewHtml);
+			jsTitleHtml, function(jsTitleHtml){
+				$ajaxUtils.sendGetRequest(jsHtml, function(jsHtml){
+					var JSViewHtml = buildJSViewHtml(categories, jsTitleHtml, jsHtml);
+	 	 			insertHtml("#HTTPDes", JSViewHtml);
 				}, false);
 		}, false);
 	}
+	function buildJSViewHtml(categories, categoriesTitleHtml, categoryHtml){
+		var finalHtml = categoriesTitleHtml;
+		finalHtml += "<section class='row'>";
+		console.log("category length : "+categories.length);
+
+		for(var i =0; i<3; i++){
+	
+			var html = categoryHtml;
+			var name = ""+categories[i].name;
+			var short_name = categories[i].short_name;
+			html = insertProperty(html, "name", name);
+			html = insertProperty(html, "short_name",  short_name);
+			finalHtml += html;
+		}
+		console.log("final html : "+finalHtml);
+		finalHtml += "</section>";
+  		return finalHtml;
+
+	}
+
+
 	// Remove the class 'active' from home and switch to Menu button
 	var switchMenuToActive = function () {
 	  // Remove 'active' from home button
