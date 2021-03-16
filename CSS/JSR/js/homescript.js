@@ -81,7 +81,6 @@
 	function buildJSViewHtml(categories, categoriesTitleHtml, categoryHtml){
 		var finalHtml = categoriesTitleHtml;
 		finalHtml += "<section class='row'>";
-		console.log("category length : "+categories.length);
 
 		for(var i =0; i<3; i++){
 	
