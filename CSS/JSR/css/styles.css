@@ -75,16 +75,16 @@
 }
 
 #js {
-  background: url('../images/A/A.png') no-repeat;
+  background: url('../images/table/A/A.png') no-repeat;
   background-position: center;
 }
 
 #ajax {
-  background: url('../images/J/J.png') no-repeat;
+  background: url('../images/table/J/J.png') no-repeat;
   background-position: center;
 }
 
 #json {
-  background: url('../images/C/C.png') no-repeat;
+  background: url('../images/table/C/C.png') no-repeat;
   background-position: center;
 }
