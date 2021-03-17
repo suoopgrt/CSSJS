@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // *** start ***
 // On first load, show home view
 showLoading("#main-content");
-$ajaxUtils.sendGetRequest(categories, function(categories){
-    buildAndShowHomeHTML(categories); 
+$ajaxUtils.sendGetRequest(allCategoriesUrl, function(categories){
+    buildAndShowHomeHTML(allCategoriesUrl); 
   }, false);  
 });
 // *** finish **
@@ -96,7 +96,8 @@ function buildAndShowHomeHTML (categories) {
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl, function (homeHtmlUrl) {
           var chosenCategoryShortName = chooseRandomCategory(categories).short_name;      
-          var homeHtmlToInsertIntoMainPage = insertProperty(homeHtmlUrl, "randomCategoryShortName", chosenCategoryShortName);
+          var homeHtmlToInsertIntoMainPage = 
+            insertProperty(homeHtmlUrl, "randomCategoryShortName", chosenCategoryShortName);
           insertHtml("#main-content", homeHtmlToInsertIntoMainPage);
 
       
