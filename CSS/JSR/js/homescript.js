@@ -2,8 +2,11 @@
 	var dc = {};
 	var httpHtml = "snippets/http-snippet.html";
 	var mainHtml = "snippets/main.html";
+	var JSItemsTitleHtml = "snippets/JS-items-title.html";
+	var JSItemsHtml = "snippets/JS-items.html";
 //  var allCategoriesUrl = "http://davids-restaurant.herokuapp.com/categories.json";
 	var allCategoriesUrl = "data/categories.json"
+	var JSUrl = "data/json-category="
 //	var menuItemsUrl ="https://davids-restaurant.herokuapp.com/menu_items.json?category=";
 	var canvasUrl = "data/canvas-items.json";
 
@@ -48,6 +51,12 @@
 		$ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowJSHTML);
 	};
 
+	dc.loadJSItems = function(categoryShort){
+		showLoading("#HTTPDes");
+		$ajaxUtils.sendGetRequest(JSUrl+categoryShort, buildAndShowJSItemHtml);
+	}
+
+
 	dc.loadCanvasItems = function(categoryShort){
 		showLoading("#HTTPDes");
 		$ajaxUtils.sendGetRequest(
@@ -66,8 +75,37 @@
 					}, false);
 				}, false );
 	}
-	// Using categories data and snippets html
-	// build categories view HTML to be inserted into page
+	function buildAndShowJSItemHtml(jsItem){
+		$ajaxUtils.sendGetRequest(
+			JSItemsTitleHtml, function(JSItemsTitleHtml){
+				$ajaxUtils.sendGetReqeust(JSItemsHtml, function(JSItemsHtml){
+					switchJStoActive();
+					var JSItemsViewHtml = buildJSItemsViewHtml(jsItem, JSItemsTitleHtml, JSItemsHtml);
+					insertHtml("#HTTPDes", JSItemsViewHtml);
+				}, false );
+			}, false );
+	}
+
+	function buildJSItemsViewHtml(jsItem, JSItemsTitleHtml, JSItemsHtml){
+		JSItemsTitleHtml = insertProperty(JSItemsTitleHtml, "name", jsItem.category.name);
+		JSItemsTitleHtml = insertProperty(JSItemsTitleHtml, "special_about", jsItem.category.special_about);
+
+	}
+
+	function switchJStoActive(){
+		  var classes = document.querySelector("#navHomeButton").className;
+		  classes = classes.replace(new RegExp("active", "g"), "");
+		  document.querySelector("#navHomeButton").className = classes;
+
+		  // Add 'active' to menu button if not already there
+		  classes = document.querySelector("#navMenuButton").className;
+		  if (classes.indexOf("active") == -1) {
+		    classes += " active";
+		    document.querySelector("#navMenuButton").className = classes;
+		  }		
+
+	}
+
 
 	function buildAndShowJSHTML(categories){
 		$ajaxUtils.sendGetRequest(
@@ -78,20 +116,19 @@
 				}, false);
 		}, false);
 	}
-	function buildJSViewHtml(categories, categoriesTitleHtml, categoryHtml){
-		var finalHtml = categoriesTitleHtml;
+	function buildJSViewHtml(categories, jsTitleHtml, jsHtml){
+		var finalHtml = jsTitleHtml;
 		finalHtml += "<section class='row'>";
 
 		for(var i =0; i<3; i++){
 	
-			var html = categoryHtml;
+			var html = jsHtml;
 			var name = ""+categories[i].name;
 			var short_name = categories[i].short_name;
 			html = insertProperty(html, "name", name);
 			html = insertProperty(html, "short_name",  short_name);
 			finalHtml += html;
 		}
-		console.log("final html : "+finalHtml);
 		finalHtml += "</section>";
   		return finalHtml;
 
@@ -112,26 +149,6 @@
 	    document.querySelector("#navMenuButton").className = classes;
 	  }
 	};
-
-	function buildCategoriesViewHtml(categories, categoriesTitleHtml, categoryHtml){
-		var finalHtml = categoriesTitleHtml;
-		finalHtml += "<section class='row'>";
-		console.log("category length : "+categories.length);
-
-		for(var i =0; i<3; i++){
-	
-			var html = categoryHtml;
-			var name = ""+categories[i].name;
-			var short_name = categories[i].short_name;
-			html = insertProperty(html, "name", name);
-			html = insertProperty(html, "short_name",  short_name);
-			finalHtml += html;
-		}
-		console.log("final html : "+finalHtml);
-		finalHtml += "</section>";
-  		return finalHtml;
-
-	}
 
 	global.$dc = dc;
 })(window);
