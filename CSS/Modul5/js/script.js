@@ -96,9 +96,9 @@ function buildAndShowHomeHTML (categories) {
   $ajaxUtils.sendGetRequest(
     homeHtmlUrl, function (homeHtml) {
       $ajaxUtils.sendGetRequest(
-        categories, function
-
-        );
+        categories, function(){
+          var a = 10;
+        }, false );
 
       // TODO: STEP 2: Here, call chooseRandomCategory, passing it retrieved 'categories'
       // Pay attention to what type of data that function returns vs what the chosenCategoryShortName
