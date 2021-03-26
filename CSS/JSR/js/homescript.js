@@ -64,6 +64,11 @@
 			);
 	}
 
+	dc.loadReact = function () {
+		showLoading("#HTTPDes");
+		$ajaxUtils.sendGetRequest(allCategoriesUrl, buildAndShowJSHTML);
+	};
+
 	function buildAndShowCanvasItemsHTML(categoryCanvasItems){
 		$ajaxUtils.sendGetRequest(
 				canvastitlehtml, function(canvastitlehtml){
@@ -120,7 +125,7 @@
 		var finalHtml = jsTitleHtml;
 		finalHtml += "<section class='row'>";
 
-		for(var i =0; i<3; i++){
+		for(var i =0; i<4; i++){
 	
 			var html = jsHtml;
 			var name = ""+categories[i].name;
